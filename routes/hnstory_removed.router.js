@@ -5,6 +5,7 @@ var router = express.Router();
 var hnstory_removed_controller = require('../controllers/hnstory_removed.controller');
 
 
+
 // a simple test url to check that all of our files are communicating correctly.
 router.get('/hnstory_removed/test', hnstory_removed_controller.test);
 router.get('/hnstory_removed/list', hnstory_removed_controller.findAll);

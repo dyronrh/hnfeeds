@@ -68,14 +68,19 @@ deleteStorys(id){
 }).then((result) => {
   if (result.value) {
 
-    this.apiService.deleteteFromHNList(id).subscribe((res: HttpResponse<any>) => {
-      this.refreshList()
-      window.location.reload()
-      this.router.navigate(['/home']);
-        }  ,
-error =>{
-})
-    this.refreshList()
+    this.apiService.deleteteFromHNList(id).subscribe(data => {
+			this.renderDataTable()
+      },
+      error => {
+
+      },
+      () => {
+        Toast.fire({
+          icon: 'success',
+          title: 'Este articulo fue eliminado exitosamente'
+        })
+       }
+      );
     console.log(id)
 
   }
@@ -84,9 +89,9 @@ error =>{
 }
 refreshList(){
   this.apiService.getRefreshHNList().subscribe(res =>{
+    this.dataSource = new MatTableDataSource();  
+    this.dataSource.data = res;  
     console.log(res)
-    window.location.reload()
-    this.router.navigate(['/home']);
 
   })
   
