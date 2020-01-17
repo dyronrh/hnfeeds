@@ -12,5 +12,5 @@ Una vez clonado el proyecto instalar las dependencias de node tanto para el clie
   Node app.js 
 Dockerizado:
  para desplegar este proyecto dockerizado puede hacer mediante el siguiente comando:
- se desplegara 3 contenedores corriendo con las piezas del backend, front-end y mongodb
+ se desplegara 3 contenedores corriendo con las piezas del backend, front-end(nginx) y mongodb
  docker-compose up --build -d
