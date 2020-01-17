@@ -1,0 +1,29 @@
+version: '3.0' # specify docker-compose version
+ 
+# Define the services/ containers to be run
+services:
+ angular: # name of the first service
+  build: ./hnclient # specify the directory of the Dockerfile
+  ports:
+  - "80:80" # specify port mapping
+  container_name: front-container
+ 
+ express: # name of the second service
+  build: ./ # specify the directory of the Dockerfile
+  ports:
+  - "3000:3000" #specify ports mapping
+  container_name: backend-container
+  environment:
+    - MONGODB_URI=mongodb://database/mean-app
+  links:
+    - database
+  depends_on:
+    - database
+ 
+ database: # name of the third service
+  image: mongo # specify image to build container from
+  container_name: database-container
+  ports:
+  - "27017:27017" # specify port forwarding
+
+  
