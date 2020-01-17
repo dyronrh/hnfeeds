@@ -1,0 +1,85 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$hnclient-primary: mat-palette($mat-indigo);
+$hnclient-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$hnclient-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$hnclient-theme: mat-light-theme($hnclient-primary, $hnclient-accent, $hnclient-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($hnclient-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.date { float: right }
+.banner {
+    background-image: url(http://www.hd-freewallpapers.com/latest-wallpapers/abstract-website-backgrounds.jpg);
+    text-align: center;
+    height: 40vh;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.filter {
+    margin-left: 25px;
+}
+
+.mat-row  {
+    &:hover {
+    cursor: pointer; background-color: #fafafa;
+ }
+}  
+.banner-heading {
+    font-family: 'Libre Baskerville', serif;
+    text-align: left;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    color: #fff;
+    padding-top: 50px;
+}
+.refresh{
+    float: right!important;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+.banner-sub-heading {
+    font-family: 'Libre Baskerville', serif;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    color: #fff;
+}
