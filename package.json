@@ -14,7 +14,7 @@
     "async": "^3.1.0",
     "axios": "^0.21.1",
     "body-parser": "^1.18.2",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "mongoose": "^5.0.11",
     "node-cron": "^2.0.3",
     "node-fetch": "^2.6.1"
